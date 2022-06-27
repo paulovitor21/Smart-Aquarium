@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "46694433303",
+    "project_id": "smart-aquarium-data",
+    "storage_bucket": "smart-aquarium-data.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46694433303:android:b4e96afcde53ae944e1252",
+        "android_client_info": {
+          "package_name": "com.ufam.smartaquarium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "46694433303-d4rag4c4tnogcs91cq80dhlet183arah.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ufam.smartaquarium",
+            "certificate_hash": "01d4b821fddc900ef5712e34e319647fd05d01a6"
+          }
+        },
+        {
+          "client_id": "46694433303-t9ao0e39m8geb7c3k5ais49d74sjj1tu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs7Gat3sRPI5g5YmygAf3D_94qCMGxIrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "46694433303-t9ao0e39m8geb7c3k5ais49d74sjj1tu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
