@@ -3,13 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/drawable/dashboard_item_1_background.xml" value="0.216" />
+        <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/drawable/dashboard_item_2_background.xml" value="0.216" />
+        <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/drawable/dashboard_item_3_background.xml" value="0.216" />
+        <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/drawable/dashboard_item_4_background.xml" value="0.216" />
+        <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/drawable/end_view_background.xml" value="0.216" />
+        <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/drawable/icon_background.xml" value="0.216" />
         <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/drawable/round_back_dark_blue5_15.xml" value="0.199" />
         <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/drawable/round_back_primary_15.xml" value="0.199" />
         <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/layout/activity_login.xml" value="0.2359375" />
         <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/layout/activity_monitor.xml" value="0.25" />
         <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/layout/activity_recover_password.xml" value="0.25" />
         <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/layout/fragment_dashboard.xml" value="0.2359375" />
+        <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/layout/fragment_notification.xml" value="0.25" />
+        <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/AndroidStudio/SmartAquarium/app/src/main/res/menu/botton_nav_menu.xml" value="0.25" />
       </map>
     </option>
   </component>

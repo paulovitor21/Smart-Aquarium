@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Smart Aquarium</string>
+    <string name="monitor">Dashboard</string>
+    <string name="description_dashboard">Monitoramento em tempo real</string>
+    <string name="temperatura">Temperatura</string>
+    <string name="info_temp">Peixes de água doce requerem entre 22ºC a 28ºC</string>
+
+
+    <string name="tds">Total de Sólidos Dissolvidos</string>
+    <string name="info_tds">Material dissolvido na água</string>
+
+    <string name="od">Oxigênio Dissolvido</string>
+    <string name="info_od">Oxigênio dissolvido na água</string>
+
+    <string name="ph">PH</string>
+    <string name="info_ph">Os peixes de água doce requerem um pH de 6 a 8</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
