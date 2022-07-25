@@ -80,7 +80,7 @@
         android:text="Esqueceu a senha?"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:textColor="@color/primary"/>
+        android:textColor="@color/splash"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signInBtn"
@@ -89,11 +89,13 @@
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:text="Fazer login"
+        android:textSize="18sp"
         android:textAllCaps="false"
         android:layout_marginTop="40dp"
         android:background="@drawable/round_back_primary_15"
         android:textColor="#FFFFFF"
         />
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -175,7 +177,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Criar conta"
-            android:textColor="@color/primary"
+            android:textColor="@color/splash"
             android:textStyle="bold"/>
 
     </LinearLayout>

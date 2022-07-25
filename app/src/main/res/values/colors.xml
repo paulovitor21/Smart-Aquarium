@@ -9,13 +9,10 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="primary">#01AED8</color>
+
     
-    <color name="colorPrimary">#E33435</color>
-    <color name="colorPrimaryDark">#E33435</color>
-    <color name="colorAccent">#1A191E</color>
-    
-    <color name="colorItem1Start">#FEBD1B</color>
-    <color name="colorItem1End">#E4A401</color>
+    <color name="colorItem1Start">#FFFFFF</color>
+    <color name="colorItem1End">#FFFFFF</color>
 
     <color name="colorItem2Start">#4D79FF</color>
     <color name="colorItem2End">#0039E6</color>
@@ -28,8 +25,20 @@
 
     <color name="colorEndBackground">#50FFFFFF</color>
     <color name="colorLightText">#ECECEC</color>
-    <color name="colorWhite">#FFFFFF</color>
+
 
     <color name="splash">#0D3075</color>
+    <color name="menuNavigation">#FF9400</color>
 
+
+    // new layout
+    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimaryDark">#E33435</color>
+    <color name="colorAccent">#1A191E</color>
+    <color name="colorPrimaryLight">#E9F8F1</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBackground">#EBEBEB</color>
+    <color name="colorTrendingStart">#00B09B</color>
+    <color name="colorTrendingEnd">#96C93D</color>
+    <color name="colorDivider">#D6D6D6</color>
 </resources>
