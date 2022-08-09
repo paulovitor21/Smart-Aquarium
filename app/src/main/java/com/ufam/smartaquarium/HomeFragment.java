@@ -1,7 +1,9 @@
 package com.ufam.smartaquarium;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -11,24 +13,38 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.ufam.smartaquarium.databinding.FragmentHomeBinding;
+//import com.ufam.smartaquarium.databinding.FragmentHomeBinding;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 
 public class HomeFragment extends Fragment {
+    LineChart mpLineChart;
 
-    //private FragmentHomeBinding binding;
-
+/*
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     MyViewPageAdapter myViewPageAdapter;
+*/
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -95,8 +111,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
-
         final TextView mTDStextView = root.findViewById(R.id.tds);
         //return inflater.inflate(R.layout.fragment_home, container, false);
 
@@ -139,6 +153,59 @@ public class HomeFragment extends Fragment {
                 Log.w("TAG", "Failed to read value.", error.toException());
             }
         });
+
+        mpLineChart = root.findViewById(R.id.lineChart);
+        LineDataSet lineDataSet1 = new LineDataSet(dataValues1(), "Temperatura");
+        LineDataSet lineDataSet2 = new LineDataSet(dataValues2(), "TDS");
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+        dataSets.add(lineDataSet1);
+        dataSets.add(lineDataSet2);
+
+        mpLineChart.setBackgroundColor(Color.WHITE);
+        mpLineChart.setNoDataText("Não há dados disponíveis!");
+        mpLineChart.setNoDataTextColor(Color.BLACK);
+
+        // legend
+        Legend legend = mpLineChart.getLegend();
+        legend.setEnabled(true);
+        legend.setTextColor(Color.BLACK);
+        legend.setTextSize(10);
+        legend.setForm(Legend.LegendForm.CIRCLE);
+
+        // description
+        Description description = new Description();
+        description.setText("");
+        description.setTextColor(Color.WHITE);
+        description.setTextSize(5);
+        mpLineChart.setDescription(description);
+
+
+        LineData data = new LineData(dataSets);
+        mpLineChart.setData(data);
+        mpLineChart.invalidate();
+
         return root;
+    }
+
+    public ArrayList<Entry> dataValues1() {
+        ArrayList<Entry> dataVals = new ArrayList<Entry>();
+        dataVals.add(new Entry(0,20));
+        dataVals.add(new Entry(1, 24));
+        dataVals.add(new Entry(2, 2));
+        dataVals.add(new Entry(3, 10));
+        dataVals.add(new Entry(4, 28));
+
+        return dataVals;
+    }
+
+    public ArrayList<Entry> dataValues2() {
+        ArrayList<Entry> dataVals = new ArrayList<Entry>();
+        dataVals.add(new Entry(0, 13));
+        dataVals.add(new Entry(2, 18));
+        dataVals.add(new Entry(4, 22));
+        dataVals.add(new Entry(6, 26));
+        dataVals.add(new Entry(8, 30));
+
+        return dataVals;
     }
 }

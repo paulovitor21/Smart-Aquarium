@@ -28,6 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/botton_nav_menu"
+        app:labelVisibilityMode="labeled"
         app:itemTextColor="@color/black"
         app:itemIconSize="30dp"
         android:background="@color/white"/>
