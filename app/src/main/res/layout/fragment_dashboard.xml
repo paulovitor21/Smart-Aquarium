@@ -25,7 +25,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
                 android:gravity="center"
-                android:text="Histórico de monitoramento"
+                android:text="Artigos"
                 android:textColor="@color/colorWhite"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -36,6 +36,11 @@
 
 
         </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 

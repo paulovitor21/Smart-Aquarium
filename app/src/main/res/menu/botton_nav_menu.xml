@@ -13,7 +13,7 @@
         android:id="@+id/notificationMenu"
         android:icon="@drawable/ic_notifications"/>
 
-    <item android:title="Perfil"
+    <item android:title="Perfil e Ajustes"
         android:id="@+id/profileMenu"
         android:icon="@drawable/ic_person" />
 </menu>

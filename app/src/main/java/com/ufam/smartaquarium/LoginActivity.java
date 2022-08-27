@@ -1,25 +1,50 @@
 package com.ufam.smartaquarium;
 
+import static com.google.android.gms.auth.api.signin.GoogleSignIn.*;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.ufam.smartaquarium.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
+
     private ActivityLoginBinding binding;
 
     private boolean passwordShowing = false;
-
     private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +53,9 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
+
+
+
 
         // redireciona para RegisterActivity
         binding.signUpBtn.setOnClickListener(v -> {
@@ -40,6 +68,39 @@ public class LoginActivity extends AppCompatActivity {
 
         final EditText passwordET = findViewById(R.id.passwordET);
         final ImageView passwordIcon = findViewById(R.id.passwordIcon);
+        final RelativeLayout signInWithGoogle = findViewById(R.id.signInWithGoogle);
+
+        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                        .build();
+
+        GoogleSignInClient googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
+
+        GoogleSignInAccount googleSignInAccount = GoogleSignIn.getLastSignedInAccount(this);
+
+        // verificando se o usuário já fez login
+        if (googleSignInAccount != null) {
+            // abre activity ProfileFragment
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
+
+        ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                // obter uma conta conectada depois que o usuário selecionou uma conta Google na caixa de diálogo
+                Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
+                tarefaLogin(task);
+            }
+        });
+
+        signInWithGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent entrarIntent = googleSignInClient.getSignInIntent();
+                activityResultLauncher.launch(entrarIntent);
+            }
+        });
 
         // verificando se a senha está aparecendo ou não
         passwordIcon.setOnClickListener(v -> {
@@ -61,6 +122,8 @@ public class LoginActivity extends AppCompatActivity {
 
         binding.signInBtn.setOnClickListener(v -> validateData());
     }
+
+
 
     private void validateData() {
         String email = binding.emailET.getText().toString().trim();
@@ -91,5 +154,22 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Falha na autenticação!", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void tarefaLogin(Task<GoogleSignInAccount> task) {
+        try {
+            GoogleSignInAccount conta = task.getResult(ApiException.class);
+            // obtendo dados da conta
+            final String getNome = conta.getDisplayName();
+            final String getEmail = conta.getEmail();
+            final Uri getFotoURL = conta.getPhotoUrl();
+
+            // abre HomeFragment
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        } catch (ApiException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Autenticação falhou!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

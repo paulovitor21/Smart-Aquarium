@@ -156,7 +156,7 @@
             android:layout_centerInParent="true"
             android:text="Continuar com o Google"
             android:textColor="#E6000000"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <LinearLayout

@@ -14,9 +14,6 @@ import com.ufam.smartaquarium.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-    TabLayout tabLayout;
-    ViewPager2 viewPager2;
-    MyViewPageAdapter myViewPageAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
