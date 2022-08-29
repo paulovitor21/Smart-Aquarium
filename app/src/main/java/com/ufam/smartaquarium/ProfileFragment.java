@@ -1,24 +1,24 @@
 package com.ufam.smartaquarium;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatButton;
+
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,10 +27,7 @@ import com.google.android.gms.tasks.Task;
  */
 public class ProfileFragment extends Fragment {
 
-    GoogleSignInOptions gso;
-    GoogleSignInClient gsc;
-    TextView nome, email;
-    Button btnEncerrar;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -84,7 +81,10 @@ public class ProfileFragment extends Fragment {
 
         final TextView nome = root.findViewById(R.id.nomeConta);
         final TextView email = root.findViewById(R.id.emailConta);
-        final AppCompatButton btnSair = root.findViewById(R.id.btnSair);
+        final ImageView imagem = root.findViewById(R.id.imgPerfil);
+        final RelativeLayout policyPrivacy = root.findViewById(R.id.policyPrivacy);
+        final RelativeLayout btnSair = root.findViewById(R.id.btnSair);
+        //final AppCompatButton btnSair = root.findViewById(R.id.btnSair);
 
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -97,9 +97,19 @@ public class ProfileFragment extends Fragment {
         // obter dados do usuário conectado
         final String getNome = googleSignInAccount.getDisplayName();
         final String getEmail = googleSignInAccount.getEmail();
+        final Uri getImagem = googleSignInAccount.getPhotoUrl();
 
-        email.setText("Email: " + getEmail);
-        nome.setText("Nome: " + getNome);
+        email.setText(getEmail);
+        nome.setText(getNome);
+        //imagem.setImageResource(getImagem);
+
+        policyPrivacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), PrivacyPolicy.class));
+            }
+        });
+
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,6 +118,7 @@ public class ProfileFragment extends Fragment {
 
                 // abrindo para fazer login novamente
                 startActivity(new Intent(v.getContext(), LoginActivity.class));
+                //finish();
 
             }
         });

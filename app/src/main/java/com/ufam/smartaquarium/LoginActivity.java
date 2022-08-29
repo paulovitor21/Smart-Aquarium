@@ -54,9 +54,6 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-
-
-
         // redireciona para RegisterActivity
         binding.signUpBtn.setOnClickListener(v -> {
             startActivity(new Intent(this, RegisterActivity.class));

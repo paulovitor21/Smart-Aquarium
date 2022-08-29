@@ -41,4 +41,9 @@
     <color name="colorTrendingStart">#00B09B</color>
     <color name="colorTrendingEnd">#96C93D</color>
     <color name="colorDivider">#D6D6D6</color>
+
+    <color name="night_mode">#6124B1</color>
+    <color name="notification">#13B2C3</color>
+    <color name="private_account">#E6A326</color>
+    <color name="security">#D95F69</color>
 </resources>

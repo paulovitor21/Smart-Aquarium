@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Smart Aquarium</string>
+    <string name="app_name">Aquarismo Aqua</string>
     <string name="monitor">Dashboard</string>
     <string name="description_dashboard">Monitoramento em tempo real</string>
     <string name="temperatura">Temperatura</string>
