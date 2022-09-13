@@ -19,6 +19,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -81,14 +83,19 @@ public class ProfileFragment extends Fragment {
 
         final TextView nome = root.findViewById(R.id.nomeConta);
         final TextView email = root.findViewById(R.id.emailConta);
-        final ImageView imagem = root.findViewById(R.id.imgPerfil);
+        final CircleImageView circleImageView = root.findViewById(R.id.imgPerfil);
+        //final ImageView imagem = root.findViewById(R.id.imgPerfil);
         final RelativeLayout policyPrivacy = root.findViewById(R.id.policyPrivacy);
+        final RelativeLayout termosUso = root.findViewById(R.id.termosUso);
+        final RelativeLayout contato = root.findViewById(R.id.contato);
         final RelativeLayout btnSair = root.findViewById(R.id.btnSair);
         //final AppCompatButton btnSair = root.findViewById(R.id.btnSair);
 
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
+
+
 
         GoogleSignInClient googleSignInClient = GoogleSignIn.getClient(getContext(), googleSignInOptions);
 
@@ -97,16 +104,31 @@ public class ProfileFragment extends Fragment {
         // obter dados do usuário conectado
         final String getNome = googleSignInAccount.getDisplayName();
         final String getEmail = googleSignInAccount.getEmail();
-        final Uri getImagem = googleSignInAccount.getPhotoUrl();
+        //final Uri photoUrl= googleSignInAccount.getPhotoUrl();
 
         email.setText(getEmail);
         nome.setText(getNome);
+        //circleImageView.setImageURI(photoUrl);
         //imagem.setImageResource(getImagem);
 
         policyPrivacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(v.getContext(), PrivacyPolicy.class));
+            }
+        });
+
+        termosUso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), TermofUse.class));
+            }
+        });
+
+        contato.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), Contato.class));
             }
         });
 

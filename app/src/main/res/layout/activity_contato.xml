@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PrivacyPolicy">
-<!--
+    tools:context=".Contato">
+
+    <!--
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,7 +39,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Política de Privacidade"
+            android:text="Entre Contato"
             android:textColor="#FFFFFF"
             android:layout_gravity="center"
             android:textAlignment="center"
@@ -48,7 +49,8 @@
     </Toolbar>
 
     <WebView
-        android:id="@+id/wv_privacidade"
+        android:id="@+id/wv_formContato"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 </LinearLayout>

@@ -71,6 +71,7 @@
     </LinearLayout> -->
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -79,13 +80,24 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPerfil"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/colorPrimary"
+                android:src="@drawable/perfil"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center"/>
+
+          <!--  <ImageView
                 android:id="@+id/imgPerfil"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
-                android:src="@drawable/perfil"/>
+                android:src="@drawable/perfil" />
+           -->
 
             <TextView
                 android:id="@+id/nomeConta"
@@ -95,15 +107,15 @@
                 android:layout_marginTop="10dp"
                 android:text="José da Silva"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/emailConta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="josesilva@email.com"
-                android:textSize="16sp"
-                android:layout_gravity="center"/>
+                android:textSize="16sp" />
 
          <!--   <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
@@ -116,7 +128,8 @@
                 android:textColor="@color/black"
                 android:textAllCaps="false"
                 android:paddingEnd="30dp"/>
-         -->
+            -->
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -128,124 +141,18 @@
                 android:orientation="vertical"
                 android:padding="15dp">
 
-                <!--  Segurança -->
-                <!-- <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    
-                    <ImageView
-                        android:id="@+id/securityIcon"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/night"
-                        android:background="@drawable/round_back_night_mode"
-                        android:padding="12dp"/>
-
-                    <TextView
-                        android:layout_marginStart="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Modo noturno"
-                        android:textStyle="bold"
-                        android:layout_toEndOf="@+id/nightModeIcon"/>
-
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:switchMinWidth="50dp"
-                        android:theme="@style/nightModeSwitch"/>
-                </RelativeLayout> -->
-
-                <!--  Notificações -->
-                <!--<RelativeLayout
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/nightNotificationIcon"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/round_back_notifications"
-                        android:padding="12dp"
-                        android:src="@drawable/ic_notifications" />
-
-                    <TextView
-                        android:layout_marginStart="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Notificações"
-                        android:textStyle="bold"
-                        android:layout_toEndOf="@+id/nightNotificationIcon"/>
-
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:switchMinWidth="50dp"
-                        android:theme="@style/notificationsSwitch"/>
-                </RelativeLayout> -->
-
-                <!--  Prividade da conta -->
-                <!--<RelativeLayout
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/privateAccountIcon"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/private_account"
-                        android:background="@drawable/round_back_private_account"
-                        android:padding="12dp"/>
-
-                    <TextView
-                        android:layout_marginStart="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Conta privada"
-                        android:textStyle="bold"
-                        android:layout_toEndOf="@+id/privateAccountIcon"/>
-
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:switchMinWidth="50dp"
-                        android:theme="@style/privateAccountSwitch"/>
-                </RelativeLayout>
-            </LinearLayout>
-
-            <LinearLayout
-            android:background="@drawable/round_back_whiite10_20"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            android:padding="15dp"> -->
-
-                <!--  Dark mode / Night mode -->
                 <RelativeLayout
+                    android:id="@+id/termosUso"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
                         android:id="@+id/nightModeIcon"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:background="@drawable/round_back_night_mode"
                         android:padding="12dp"
-                        android:src="@drawable/assignment" />
+                        android:src="@drawable/ic_term" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -259,65 +166,62 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/navigate_next"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        />
-<!--
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:switchMinWidth="50dp"
-                        android:theme="@style/nightModeSwitch" /> -->
+                        android:src="@drawable/navigate_next" />
+
+
                 </RelativeLayout>
 
+
+
                 <!--  Notificações -->
-                <RelativeLayout
+               <RelativeLayout
                     android:id="@+id/policyPrivacy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp">
 
-                    <ImageView
-                        android:id="@+id/nightNotificationIcon"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/round_back_notifications"
-                        android:padding="12dp"
-                        android:src="@drawable/ic_notifications" />
+                   <ImageView
+                       android:id="@+id/nightNotificationIcon"
+                       android:layout_width="45dp"
+                       android:layout_height="45dp"
+                       android:background="@drawable/round_back_notifications"
+                       android:padding="12dp"
+                       android:src="@drawable/ic_term" />
 
-                    <TextView
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerVertical="true"
+                       android:layout_marginStart="20dp"
+                       android:layout_toEndOf="@+id/nightNotificationIcon"
+                       android:text="Política de Privacidade"
+                       android:textStyle="bold" />
+
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="20dp"
-                        android:layout_toEndOf="@+id/nightNotificationIcon"
-                        android:text="Política de Privacidade"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/navigate_next"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/navigate_next" />
                 </RelativeLayout>
+
 
                 <!--  Prividade da conta -->
                 <RelativeLayout
+                    android:id="@+id/contato"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp">
 
                     <ImageView
                         android:id="@+id/privateAccountIcon"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:background="@drawable/round_back_private_account"
                         android:padding="12dp"
-                        android:src="@drawable/private_account"/>
+                        android:src="@drawable/ic_help" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -325,15 +229,15 @@
                         android:layout_centerVertical="true"
                         android:layout_marginStart="20dp"
                         android:layout_toEndOf="@+id/privateAccountIcon"
-                        android:text="Sobre"
+                        android:text="Ajuda"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/navigate_next"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/navigate_next" />
                 </RelativeLayout>
 
                 <!-- Encerrar sessão -->
@@ -345,11 +249,11 @@
 
                     <ImageView
                         android:id="@+id/encerrarSessao"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:background="@drawable/round_back_private_account"
                         android:padding="12dp"
-                        android:src="@drawable/private_account"/>
+                        android:src="@drawable/ic_exit" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -363,17 +267,52 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/navigate_next"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/navigate_next" />
                 </RelativeLayout>
 
             </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="#1A000000" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
         </LinearLayout>
 
-
-
     </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Versão 1.0"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_anchor="@+id/scrollView2"
+        app:layout_anchorGravity="bottom|center" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

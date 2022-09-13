@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TermofUse">
+    <!--
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:id="@+id/btnBackPolicy"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_arrow_back"
+                android:padding="14dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Política de Privacidade"
+                android:layout_centerInParent="true"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+        -->
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Termos de Uso"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </Toolbar>
+
+    <WebView
+        android:id="@+id/wv_termosUso"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

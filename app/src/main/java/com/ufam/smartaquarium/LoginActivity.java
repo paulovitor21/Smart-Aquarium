@@ -55,16 +55,20 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         // redireciona para RegisterActivity
+
         binding.signUpBtn.setOnClickListener(v -> {
             startActivity(new Intent(this, RegisterActivity.class));
         });
 
+
         // redireciona para RecoverPasswordActivity
+
         binding.forgotPasswordBtn.setOnClickListener(v ->
                 startActivity(new Intent(this, RecoverPasswordActivity.class)));
 
         final EditText passwordET = findViewById(R.id.passwordET);
         final ImageView passwordIcon = findViewById(R.id.passwordIcon);
+
         final RelativeLayout signInWithGoogle = findViewById(R.id.signInWithGoogle);
 
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -100,6 +104,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         // verificando se a senha está aparecendo ou não
+
         passwordIcon.setOnClickListener(v -> {
 
             if (passwordShowing) {
@@ -139,6 +144,8 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+
+
     private void loginFirebase(String email, String password) {
         mAuth.signInWithEmailAndPassword(
                 email, password
@@ -153,6 +160,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+// conta google
     private void tarefaLogin(Task<GoogleSignInAccount> task) {
         try {
             GoogleSignInAccount conta = task.getResult(ApiException.class);

@@ -27,8 +27,10 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.homeMenu: replaceFragment(new HomeFragment());
                     break;
-                case R.id.dashboardMenu: replaceFragment(new DashboardFragment());
+                case R.id.notas: replaceFragment(new NotesFragment() );
                     break;
+                /*case R.id.dashboardArticle: replaceFragment(new ArticleFragment());
+                    break;*/
                 case R.id.notificationMenu: replaceFragment(new NotificationFragment());
                     break;
                 case R.id.profileMenu: replaceFragment(new ProfileFragment());
