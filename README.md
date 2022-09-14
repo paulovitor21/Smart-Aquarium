@@ -10,10 +10,10 @@ Documentação do Projeto
 | Membro | E-mail | Github | Papel |Matricula|
 |-------------------------------|--------------------------|----------------------------------|----------------------|------------|
 | Paulo Vitor Libório  | vitorliborio3@gmail.com | [paulovitor21](https://github.com/paulovitor21) | Desenvolvedor |21752116|
-| Karen Adriana  | email | [perfil](https://github.com/) | a definir |numero|
-| Ricardo Reis | email| [perfil](https://github.com/) |a definir |numero|
-| Klinger Vasconcelos | email | [perfil](https://github.com/) | a definir |numero|
-| Almir Ribeiro  | email | [perfil](https://github.com/) | a definir |numero|
+| Karen Adriana  | email | [perfil](https://github.com/) | Product Owner |numero|
+| Ricardo Reis | email| [perfil](https://github.com/) | Scrum Master |numero|
+| Klinger Vasconcelos | email | [perfil](https://github.com/) | Desenvolvedor |numero|
+| Almir Ribeiro  | email | [perfil](https://github.com/) | Devops |numero|
 
 ### 1. Orientações
 
