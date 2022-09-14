@@ -23,8 +23,11 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IValueFormatter;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.utils.ViewPortHandler;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,7 +46,7 @@ public class HomeFragment extends Fragment {
     ValueEventListener valueEventListener;
     LineDataSet lineDataSet;
     LineChart lineChart;
-    ArrayList<BarEntry> yData;
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -179,37 +182,73 @@ public class HomeFragment extends Fragment {
             }
         });
 */
- /*
         barChart = root.findViewById(R.id.barChart);
-        BarDataSet barDataSet = new BarDataSet(dataValues1(), "Temperatura");
+        BarDataSet barDataSet = new BarDataSet(tempValuesGraph(), "Temperatura");
+        BarDataSet barDataSet1 = new BarDataSet(tdsValuesGrapf(), "TDS");
+        BarDataSet barDataSet2 = new BarDataSet(phValuesGraph(), "pH");
+
         ArrayList<IBarDataSet> dataSets = new ArrayList<>();
         dataSets.add(barDataSet);
+        dataSets.add(barDataSet1);
+        dataSets.add(barDataSet2);
 
         barChart.setBackgroundColor(Color.WHITE);
         barChart.setNoDataText("Não há dados disponíveis!");
         barChart.setNoDataTextColor(Color.BLACK);
+
+
+        barDataSet.setColor(Color.parseColor("#63BDE0"));
+        barDataSet1.setColor(Color.parseColor("#e4b17d"));
+        barDataSet2.setColor(Color.parseColor("#07f9a2"));
 
         // legend
         Legend legend = barChart.getLegend();
         legend.setEnabled(true);
         legend.setTextColor(Color.BLACK);
         legend.setTextSize(10);
-        legend.setForm(Legend.LegendForm.CIRCLE);
+        legend.setForm(Legend.LegendForm.LINE);
 
         // description
         Description description = new Description();
-        description.setText("");
-        description.setTextColor(Color.WHITE);
-        description.setTextSize(5);
+        description.setText("24 Horas");
+        description.setTextColor(Color.BLACK);
+        description.setTextSize(10);
         barChart.setDescription(description);
 
         BarData data = new BarData(dataSets);
         barChart.setData(data);
         barChart.invalidate();
 
-*/
 
-        mpLineChart = root.findViewById(R.id.grafico);
+        return root;
+    }
+
+    public ArrayList<BarEntry> tempValuesGraph() {
+        ArrayList<BarEntry> tempVals = new ArrayList<>();
+        tempVals.add(new BarEntry(0,25));
+
+        return tempVals;
+    }
+
+    public ArrayList<BarEntry> tdsValuesGrapf() {
+        ArrayList<BarEntry> tdsVals = new ArrayList<>();
+        tdsVals.add(new BarEntry(1, 40));
+
+        return tdsVals;
+    }
+
+    public ArrayList<BarEntry> phValuesGraph() {
+        ArrayList<BarEntry> phVals = new ArrayList<>();
+        phVals.add(new BarEntry(2, 7));
+
+        return phVals;
+    }
+
+
+}
+
+/*
+ mpLineChart = root.findViewById(R.id.grafico);
         LineDataSet lineDataSet1 = new LineDataSet(dataValues1(), "Temperatura");
         LineDataSet lineDataSet2 = new LineDataSet(dataValues2(), "TDS");
         ArrayList<ILineDataSet> dataSets = new ArrayList<>();
@@ -238,45 +277,4 @@ public class HomeFragment extends Fragment {
         LineData data = new LineData(dataSets);
         mpLineChart.setData(data);
         mpLineChart.invalidate();
-
-        return root;
-    }
-
-/*
-    public ArrayList<BarEntry> dataValues1() {
-        ArrayList<BarEntry> dataVals = new ArrayList<>();
-        dataVals.add(new BarEntry(0,20));
-        dataVals.add(new BarEntry(1, 24));
-        dataVals.add(new BarEntry(2, 2));
-        //dataVals.add(new BarEntry(3, 10));
-        //dataVals.add(new BarEntry(4, 28));
-        return dataVals;
-    }
-*/
-
-
-    public ArrayList<Entry> dataValues1() {
-        ArrayList<Entry> dataVals = new ArrayList<Entry>();
-        dataVals.add(new Entry(0,20));
-        dataVals.add(new Entry(1, 24));
-        dataVals.add(new Entry(2, 2));
-        dataVals.add(new Entry(3, 10));
-        dataVals.add(new Entry(4, 28));
-
-        return dataVals;
-    }
-
-
-
-    public ArrayList<Entry> dataValues2() {
-        ArrayList<Entry> dataVals = new ArrayList<Entry>();
-        dataVals.add(new Entry(0, 13));
-        dataVals.add(new Entry(2, 18));
-        dataVals.add(new Entry(4, 22));
-        dataVals.add(new Entry(6, 26));
-        dataVals.add(new Entry(8, 30));
-        return dataVals;
-    }
-
-
-}
+ */
